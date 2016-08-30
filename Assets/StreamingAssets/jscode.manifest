@@ -1,0 +1,30 @@
+ManifestFileVersion: 0
+CRC: 3710599051
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e25dad00ddaa5b9b4988539d3c236f0c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1033bf7ddfd4c6d43e7a6382c0a0a61a
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/JavaScript/SharpKit/myclrhandler.bytes
+- Assets/JavaScript/Manual/UnityEngine_Vector2.bytes
+- Assets/JavaScript/SharpKit/clrlibrary.bytes
+- Assets/JavaScript/Manual/UnityEngine_Mathf.bytes
+- Assets/JavaScript/includes.bytes
+- Assets/JavaScript/ErrorHandler.bytes
+- Assets/JavaScript/JsTypeInfoConfig.json
+- Assets/JavaScript/Manual/UnityEngine_Vector3.bytes
+- Assets/JavaScript/GameLogicCode.bytes
+- Assets/JavaScript/Manual/UnityEngine_WaitForSeconds.bytes
+- Assets/JavaScript/SharpKit/jsclr.bytes
+- Assets/JavaScript/Manual/JsonUtils.bytes
+- Assets/JavaScript/Manual/UnityEngine_MonoBehaviour.bytes
+- Assets/JavaScript/CSExportTypes.bytes
+- Assets/JavaScript/Mono2JsComConfig.json
+Dependencies: []

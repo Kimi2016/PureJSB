@@ -8,7 +8,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.XPath;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -257,6 +256,7 @@ public static class JSBCodeGenSettings
     /// </summary>
     public static readonly List<string> TypeBlackSet = new List<string>
     {
+		"GUIStyleState",
         "Canvas",
         "CanvasRenderer",
         "RectTransform",
@@ -374,7 +374,7 @@ public static class JSBCodeGenSettings
         {typeof (GameObject), new HashSet<string> {"networkView"}},
         {typeof (Component), new HashSet<string> {"networkView"}},
         // unity5
-        {typeof (AnimatorControllerParameter), new HashSet<string> {"name"}},
+        {typeof (UnityEngine.AnimatorControllerParameter), new HashSet<string> {"name"}},
         //{typeof (Resources), new HashSet<string> {"LoadAssetAtPath"}},
         {typeof (Input), new HashSet<string> {"IsJoystickPreconfigured"}},
 #if UNITY_4_6 || UNITY_4_7

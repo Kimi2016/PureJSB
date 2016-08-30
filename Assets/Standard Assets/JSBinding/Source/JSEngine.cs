@@ -27,6 +27,7 @@ public class JSEngine : MonoBehaviour
      */
 	public bool UseJSC = false;
     public bool debug = true;
+	public bool loadBundle = false;
     public int port = 5086;
     bool mDebug = true;
 
@@ -126,7 +127,9 @@ public class JSEngine : MonoBehaviour
 #endif
 
                 Stopwatch stopwatch = Stopwatch.StartNew();
+				JSFileLoader.StartLoading ();
                 JSMgr.InitJSEngine(jse.OnInitJSEngine);
+				JSFileLoader.EndLoading ();
                 stopwatch.Stop();
                 Debug.Log("==============InitJSEngine: " + stopwatch.ElapsedMilliseconds + " ms");
             }

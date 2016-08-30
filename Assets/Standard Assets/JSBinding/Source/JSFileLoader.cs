@@ -10,12 +10,37 @@ using System.IO;
  */
 public static class JSFileLoader
 {
+	private static AssetBundle _jsCodeBundle;
+
+	public static void StartLoading(){
+		if (!JSEngine.inst.loadBundle)
+			return;
+		_jsCodeBundle = AssetBundle.LoadFromFile (Application.streamingAssetsPath + "/jscode");
+	}
+
+	public static void EndLoading(){
+		if (!JSEngine.inst.loadBundle)
+			return;
+
+		_jsCodeBundle.Unload (false);
+		_jsCodeBundle = null;
+	}
+
     public static byte[] LoadJSSync(string scriptName)
     {
         string filePath = GetJsScriptPath(scriptName);
         try
         {
-            return File.ReadAllBytes(filePath);
+			if(JSEngine.inst.loadBundle){
+				if(_jsCodeBundle != null){
+					var asset = _jsCodeBundle.LoadAsset(filePath) as TextAsset;
+					return asset.bytes;
+				}
+				else
+					throw new Exception("_jsCodeBundle is null");
+			}else{
+            	return File.ReadAllBytes(filePath);
+			}
         }
         catch (Exception e)
         {
@@ -31,6 +56,9 @@ public static class JSFileLoader
     /// <returns></returns>
     public static string GetJsScriptPath(string jsScriptName)
     {
+		if (JSEngine.inst.loadBundle)
+			return Path.GetFileNameWithoutExtension (jsScriptName);
+		
         if (jsScriptName.EndsWith(".json"))
             return jsScriptName;
 

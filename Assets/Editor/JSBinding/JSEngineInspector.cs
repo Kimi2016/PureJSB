@@ -20,6 +20,7 @@ public class JSEngineInspector : Editor
         EditorGUILayout.PropertyField(serializedObject.FindProperty("GCInterval"));
         EditorGUILayout.PropertyField(serializedObject.FindProperty("UseJSC"));
 		EditorGUILayout.PropertyField(serializedObject.FindProperty("showStatistics"));
+		EditorGUILayout.PropertyField(serializedObject.FindProperty("loadBundle"));
         EditorGUILayout.PropertyField(serializedObject.FindProperty("scrollPos"));
         EditorGUILayout.PropertyField(serializedObject.FindProperty("InitLoadScripts"), true);
 
